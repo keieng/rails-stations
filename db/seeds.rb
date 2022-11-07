@@ -3,5 +3,68 @@
 #
 # Examples:
 #
-movies = Movie.create([{ name: "Star Wars", is_showing: false }])
+movies = Movie.create([{ name: "Star Wars", is_showing: false },
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+},
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+},
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+},
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+},
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+},
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+},
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+},
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+},
+                       {
+  name: "映画",
+  year: "2022",
+  description: "説明",
+  image_url: "test.com",
+  is_showing: true,
+}])
 # Character.create(name: 'Luke', movie: movies.first)

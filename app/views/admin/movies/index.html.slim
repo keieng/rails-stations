@@ -1,0 +1,33 @@
+h1 管理画面
+p 映画一覧
+
+table
+  thead
+    tr
+      th ID
+      th タイトル
+      th 公開年
+      th 概要
+      th 画像URL
+      th 上映中
+      th 登録日時
+      th 更新日時
+  tbody
+    - @movies.each do |movie|
+      tr
+        td
+          =movie.id
+        td
+          =movie.name
+        td
+          =movie.year
+        td
+          =movie.description
+        td
+          =movie.image_url
+        td
+          =movie.is_showing ? "上映中" : ""
+        td
+          =movie.created_at
+        td
+          =movie.updated_at
