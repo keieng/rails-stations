@@ -1,0 +1,33 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "docker-rails",
+      "type": "shell",
+      "command": "docker compose exec web ${input:docker-rails}",
+      "problemMatcher": []
+    },
+    {
+      "label": "techtrain-test",
+      "type": "shell",
+      "command": "docker compose exec web rspec spec/station${input:stationNo}",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "docker-rails", // ${input:***}で指定したID
+      "description": "docker環境でrailsコマンドを実行する:", // 入力説明文
+      "default": "", // デフォルト入力値
+      "type": "promptString" // 入力タイプ
+    },
+    {
+      "id": "stationNo", // ${input:***}で指定したID
+      "description": "実行したいテストNoを入力:", // 入力説明文
+      "default": "", // デフォルト入力値
+      "type": "promptString" // 入力タイプ
+    }
+  ]
+}
