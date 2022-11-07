@@ -10,6 +10,16 @@ table
     - @movies.each do |movie|
       tr
         td
+          = movie.name
+          br/
+          = movie.year
+          br/
+          = movie.description
+          br/
+          = movie.image_url
+          br/
+          = movie.is_showing
+        td
           = link_to 'Show', movie
         td
           = link_to 'Edit', edit_movie_path(movie)
