@@ -1,9 +1,6 @@
 class Admin::MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
-  # def search
-  # end
-
   # GET /movies or /movies.json
   def index
     @movies = Movie.all

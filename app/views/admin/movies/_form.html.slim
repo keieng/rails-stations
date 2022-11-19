@@ -22,7 +22,7 @@
   div
     = f.label :is_showing,"上映中か"
     = f.check_box :is_showing
-  div
+  .action
     = f.submit value: button_value
   div
     = link_to 'Back', admin_movies_path
