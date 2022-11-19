@@ -4,15 +4,27 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "docker-rails",
+      "label": "docker-rails-web",
       "type": "shell",
       "command": "docker compose exec web ${input:docker-rails}",
+      "problemMatcher": []
+    },
+    {
+      "label": "docker-rails-db",
+      "type": "shell",
+      "command": "docker compose exec db ${input:docker-rails}",
       "problemMatcher": []
     },
     {
       "label": "techtrain-test",
       "type": "shell",
       "command": "docker compose exec web rspec spec/station${input:stationNo}",
+      "problemMatcher": []
+    },
+    {
+      "label": "start-up",
+      "type": "shell",
+      "command": "docker compose build &&docker compose run --rm web bundle install &&docker compose up -d &&docker compose exec web rails db:create &&docker compose exec web rails db:migrate &&docker compose exec web rails db:seed &&docker compose exec web yarn install",
       "problemMatcher": []
     }
   ],
