@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_01_05_082551) do
     t.boolean "is_showing", null: false, comment: "上映中かどうか"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_movies_on_name"
+    t.index ["name"], name: "index_movies_on_name", unique: true
   end
 
 end
