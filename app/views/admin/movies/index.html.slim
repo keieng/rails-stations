@@ -36,8 +36,8 @@ table
         td
           =movie.updated_at
         td
-          =link_to 'Show', [:admin, movie]
+          =link_to '詳細', [:admin, movie]
         td
-          = link_to 'Edit', edit_admin_movie_path(movie)
+          = link_to '編集', edit_admin_movie_path(movie)
         td
-          = link_to 'Destroy',[:admin, movie], method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to '削除',[:admin, movie], method: :delete, data: { confirm: "映画名：#{movie.name}を削除してよろしいですか?" }

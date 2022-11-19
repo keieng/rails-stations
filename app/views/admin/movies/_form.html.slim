@@ -1,12 +1,28 @@
-= form_with(model: movie) do |form|
-  - if movie.errors.any?
+= form_with(model: movie) do |f|
+  - if @movie.errors.any?
     #error_explanation
       h2
-        = pluralize(movie.errors.count, "error")
-        |  prohibited this movie from being saved:
+        = pluralize(@movie.errors.count, "error messages")
       ul
-        - movie.errors.each do |error|
+        - @movie.errors.each do |error|
           li
             = error.full_message
-  .actions
-    = form.submit
+  div
+    = f.label :name,"映画タイトル"
+    = f.text_field :name
+  div
+    = f.label :year,"公開年"
+    = f.number_field :year
+  div
+    = f.label :description,"概要"
+    = f.text_area :description
+  div
+    = f.label :image_url,"画像URL"
+    = f.text_field :image_url
+  div
+    = f.label :is_showing,"上映中か"
+    = f.check_box :is_showing
+  div
+    = f.submit value: button_value
+  div
+    = link_to 'Back', admin_movies_path
