@@ -1,0 +1,15 @@
+p#notice
+  = notice
+p
+  = @movie.name
+p
+  = @movie.year
+p
+  = simple_format(@movie.description)
+p
+  = @movie.image_url
+p
+  = @movie.is_showing
+= link_to 'Edit', edit_admin_movie_path(@movie)
+|  |
+= link_to 'Back', admin_movies_path
