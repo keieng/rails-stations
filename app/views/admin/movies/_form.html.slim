@@ -1,5 +1,5 @@
-= form_with(model: movie) do |f|
-  - if @movie.errors.any?
+- if @movie.errors.any?
+  .alert.alert-danger[role="alert"]
     #error_explanation
       h2
         = pluralize(@movie.errors.count, "error messages")
@@ -7,22 +7,23 @@
         - @movie.errors.each do |error|
           li
             = error.full_message
-  div
+
+= form_with(model: movie) do |f|
+  div.form-group
     = f.label :name,"映画タイトル"
-    = f.text_field :name
-  div
+    = f.text_field :name,class: "form-control"
+  div.form-group
     = f.label :year,"公開年"
-    = f.number_field :year
-  div
+    = f.number_field :year,class: "form-control"
+  div.form-group
     = f.label :description,"概要"
-    = f.text_area :description
-  div
+    = f.text_area :description,class: "form-control"
+  div.form-group
     = f.label :image_url,"画像URL"
-    = f.text_field :image_url
-  div
-    = f.label :is_showing,"上映中か"
-    = f.check_box :is_showing
+    = f.text_field :image_url,class: "form-control"
+  div.form-group.form-check
+    = f.check_box :is_showing,class: "form-check-input"
+    = f.label :is_showing,"上映中か",class: "form-check-label"
   .action
-    = f.submit value: button_value
-  div
-    = link_to 'Back', admin_movies_path
+    = f.submit value: button_value,class: "btn btn-primary mr-3"
+    = link_to 'Back', admin_movies_path,class: "btn btn-outline-primary"

@@ -8,5 +8,13 @@ html lang="ja"
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
   body
+    - if notice
+      .alert.alert-primary.alert-dismissible.fade.show[role="alert"]
+        #notice
+          = notice
+        button.close aria-label="Close" data-dismiss="alert" type="button"
+          span aria-hidden="true"  &times;
     = yield
