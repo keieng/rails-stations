@@ -17,7 +17,10 @@
           p.card-text = simple_format(@movie.description)
           p.card-text
             small.text-muted
+              = "Created #{@movie.created_at}"
+          p.card-text
+            small.text-muted
               = "Last updated #{@movie.updated_at}"
 
-  = link_to '編集', edit_admin_movie_path(@movie),class: "btn btn-primary mr-3"
-  = link_to 'Back', admin_movies_path,class: "btn btn-outline-primary"
+  / = link_to '編集', edit_admin_movie_path(@movie),class: "btn btn-primary mr-3"
+  = link_to 'Back', movies_path,class: "btn btn-outline-primary"

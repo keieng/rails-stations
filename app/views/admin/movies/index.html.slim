@@ -23,15 +23,15 @@
           td
             =movie.year
           td
-            =movie.description
+            =movie.description.slice(0..30)
           td
-            =movie.image_url
+            =movie.image_url.slice(0..30)
           td
-            =movie.is_showing ? "上映中" : ""
+            =movie.is_showing ? "公開中" : ""
           td
-            =movie.created_at
+            =movie.created_at.strftime("%Y/%m/%d")
           td
-            =movie.updated_at
+            =movie.updated_at.strftime("%Y/%m/%d")
           td
             =link_to '詳細', [:admin, movie],class: "btn btn-light"
           td
