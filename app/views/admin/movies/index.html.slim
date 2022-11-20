@@ -37,7 +37,7 @@ table
         td
           =movie.updated_at
         td
-          =link_to '詳細', [:admin, movie]
+          =link_to '詳細', [:admin, movie],class: "btn btn-primary"
         td
           = link_to '編集', edit_admin_movie_path(movie)
         td

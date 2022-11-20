@@ -7,6 +7,8 @@ gem "slim-rails"
 
 gem "slim"
 gem "html2slim"
+gem 'bootstrap', '~> 5.2.2'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 6.1.3", ">= 6.1.3.2"
