@@ -26,6 +26,12 @@
       "type": "shell",
       "command": "docker compose build &&docker compose run --rm web bundle install &&docker compose up -d &&docker compose exec web rails db:create &&docker compose exec web rails db:migrate &&docker compose exec web rails db:seed &&docker compose exec web yarn install",
       "problemMatcher": []
+    },
+    {
+      "label": "db-reset",
+      "type": "shell",
+      "command": "docker compose exec web rails db:migrate:reset &&docker compose exec web rails db:seed",
+      "problemMatcher": []
     }
   ],
   "inputs": [
