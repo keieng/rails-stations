@@ -3,6 +3,15 @@
 #
 # Examples:
 #
+for row in "a".."c"
+  for num in 1..5
+    Sheet.create({
+      column: num,
+      row: row,
+    })
+  end
+end
+
 movies = Movie.create([{
   name: "映画1",
   year: "2022",
@@ -66,4 +75,4 @@ movies = Movie.create([{
   image_url: "test.com",
   is_showing: true,
 }])
-# Character.create(name: 'Luke', movie: movies.first)
+# # Character.create(name: 'Luke', movie: movies.first)

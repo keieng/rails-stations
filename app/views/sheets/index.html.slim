@@ -1,0 +1,19 @@
+p id="notice"
+  =notice
+h1 座席一覧
+table
+  thead
+    tr
+      td
+      - for num in 1..5
+        td =num
+      td
+  tbody
+    - @sheets.each do |s|
+      - if s.id % 5 == 1
+        tr
+      - if s.id % 5 == 1
+        th = s.row.upcase
+      td.square = "#{s.column}-#{s.row}"
+      - if s.id % 5 == 0
+        td = s.row.upcase
