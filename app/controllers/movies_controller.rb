@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
+    @schedules = Schedule.where(movie: params[:id])
   end
 
   private

@@ -23,4 +23,8 @@
               = "Last updated #{@movie.updated_at}"
 
   / = link_to '編集', edit_admin_movie_path(@movie),class: "btn btn-primary mr-3"
+  - @schedules.each do |schedule|
+    p = schedule.id
+    p = schedule.start_time.strftime("%H:%M:%S")
+    p = schedule.end_time.strftime("%H:%M:%S")
   = link_to 'Back', movies_path,class: "btn btn-outline-primary"
